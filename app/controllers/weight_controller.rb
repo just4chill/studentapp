@@ -1,46 +1,36 @@
 class WeightController < ApplicationController
   
   def index
-  	@resp = Array.new
-  	@weights = Weight.all()
-  	@weights.each do |weight|
-  		node = weight.info.split(",")[0]
-  		val = weight.info.split(",")[1]
-  		@resp.push(node,val)
-  	end
-  	render :json => @resp
+    render :json => Weight.all()
   end
 
  def create
   	@weight = Weight.create!(weight_params)
-  	@resp = [@weight.info.split(",")[0],@weight.info.split(",")[1]]
-  	render :json => @resp
+  	render :json => @weight
   end
 
    def update
   	@weight = Weight.find_by!(id: params[:id])
   	@weight.update!(weight_params)
-  	@resp = [@weight.info.split(",")[0],@weight.info.split(",")[1]]
-  	render :json => @resp
+  	render :json => @weight
   end
 
   def destroy
   	@weight = Weight.find_by!(id: params[:id])
   	@weight.destroy!()
-  	@resp = [@weight.info.split(",")[0],@weight.info.split(",")[1]]
-  	render :json => @resp
+  	render :json => @weight
   end
 
    def show
   	@weight = Weight.find_by!(id: params[:id])
-  	@resp = [@weight.info.split(",")[0],@weight.info.split(",")[1]]
-  	render :json => @resp
+  	render :json => @weight
   end
 
 
   private
 
   def weight_params
-  	params.require(:weight).permit(:info)
+  	params.require(:weight).permit(:ref, :w_val)
   end
+  
 end

@@ -21,12 +21,16 @@ ActiveRecord::Schema.define(version: 20150414131506) do
   create_table "weights", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "info"
+    t.integer  "ref"
+    t.integer  "w_val"
   end
 
   create_table "zigbees", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "ref"
+    t.integer  "d_state"
+    t.integer  "s_val"
   end
 
 end

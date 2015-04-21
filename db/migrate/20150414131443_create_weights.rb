@@ -3,7 +3,10 @@ class CreateWeights < ActiveRecord::Migration
     create_table :weights do |t|
 
       t.timestamps null: false
-      t.string	:info
+
+      t.integer	:ref
+      t.integer :w_val
+      
     end
   end
 end
