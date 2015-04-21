@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -18,15 +18,14 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'slim-rails'
 
+gem 'tzinfo-data'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
-
-	# Call 'debugger' anywhere in the code to stop execution and get a debugger console
-	gem 'debugger'
 
 	# Access an IRB console on exception pages or by using <%= console %> in views
 	gem 'web-console', '~> 2.0'
