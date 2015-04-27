@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414131506) do
+ActiveRecord::Schema.define(version: 20150427091857) do
 
-  create_table "ledgers", force: :cascade do |t|
+  create_table "accounts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "amount"
+    t.string   "card"
+    t.string   "name"
   end
 
   create_table "weights", force: :cascade do |t|
