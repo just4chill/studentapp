@@ -26,19 +26,23 @@ class GatewayController < ApplicationController
 		to   		= Account.find_by!(card: _to)
 		amount  	= _amount.to_i
 
-		from.amount -= amount
-		to.amount 	+= amount
+		if from.amount < amount 
+			render json: {
+					status: 400,
+					info: "insufficient"
+					}, status: 400		
 
-		from.save
-		to.save
+		else
+			from.amount -= amount
+			to.amount 	+= amount
 
-		render json: {
-					status: 200,
-					info: "success"
-					}, status: 200
+			from.save
+			to.save
 
+			render json: {
+						status: 200,
+						info: "success"
+						}, status: 200
+		end
 	end
-
-
-
 end

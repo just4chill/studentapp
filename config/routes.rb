@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
 get		'/gateway', to: 'gateway#index'
 get 	'/gateway/:id', 				to: 'gateway#show'
-get		'/gateway/:from/:to/:amt',	to: 'gateway#transfer'
+get		'/gateway/:from/:to/:amt',		to: 'gateway#transfer'
  
 end
