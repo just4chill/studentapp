@@ -45,4 +45,20 @@ class GatewayController < ApplicationController
 						}, status: 200
 		end
 	end
+
+	def update
+  		@account = Account.find_by!(id: params[:id])
+  		@account.update!(account_params)
+  		render :json => @account
+  	end
+
+  	def create
+  		@account = Account.create!(account_params)
+  		render :json => @account
+  	end
+
+  	def account_params
+  		params.require(:account).permit(:card, :name, :amount)
+  	end
+
 end

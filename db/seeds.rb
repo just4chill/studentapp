@@ -5,8 +5,8 @@
 # Zigbee.create!(ref: 2, d_state: 0, s_val: 0)
 # Zigbee.create!(ref: 3, d_state: 0, s_val: 0)
 
-Account.create!(card: "0123456781", name: "person1", amount: 1000)
-Account.create!(card: "0123456782", name: "person2", amount: 500)
+Account.create!(card: "0001710301", name: "person1", amount: 1000)
+Account.create!(card: "0003833285", name: "person2", amount: 500)
 Account.create!(card: "0123456783", name: "person3", amount: 1000)
 Account.create!(card: "0123456784", name: "person4", amount: 1000)
 Account.create!(card: "A", name: "person1", amount: 1000)
