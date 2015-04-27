@@ -1,5 +1,9 @@
 class GatewayController < ApplicationController
 
+	def index
+		render :json => Account.all()
+	end
+
 	def show
 		# TODO: not found error
 		render :json => Account.find_by!(card: params[:id])
