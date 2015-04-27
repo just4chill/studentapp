@@ -57,6 +57,12 @@ class GatewayController < ApplicationController
   		render :json => @account
   	end
 
+  	def destroy
+    	@account = Account.find_by!(id: params[:id])
+    	@account.destroy!()
+    	render :json => @account
+  	end
+
   	def account_params
   		params.require(:account).permit(:card, :name, :amount)
   	end
